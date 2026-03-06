@@ -1,23 +1,25 @@
-let mining = false
-let hashes = 0
+let mining = false;
+let hashes = 0;
 
 function startMining(){
-mining = true
-document.getElementById("status").innerText = "Running"
-mine()
+if(!mining){
+mining = true;
+document.getElementById("status").innerText = "Running";
+mine();
+}
 }
 
 function stopMining(){
-mining = false
-document.getElementById("status").innerText = "Stopped"
+mining = false;
+document.getElementById("status").innerText = "Stopped";
 }
 
 function mine(){
-if(!mining) return
+if(!mining) return;
 
-hashes++
+hashes++;
 
-document.getElementById("hashes").innerText = hashes
+document.getElementById("hashes").innerText = hashes;
 
-setTimeout(mine,10)
+setTimeout(mine,10);
 }
